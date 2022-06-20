@@ -53,6 +53,16 @@ if (savedTodos) {
   parsedTodos.forEach(paintTodo);
 }
 
+function checkedTodo(e) {
+  const checkbox = e.target;
+  const li = e.target.parentElement;
+  if (checkbox.checked) {
+    li.style.textDecoration = "line-through";
+  } else {
+    li.style.textDecoration = "";
+  }
+}
+
 function deleteTodo(e) {
   // click된 버튼의 부모 요소인 li 요소를 가리킴
   const li = e.target.parentElement;
@@ -66,11 +76,19 @@ function paintTodo(newTodo) {
   li.id = newTodo.id;
   const span = document.createElement("span");
   span.innerText = newTodo.text;
+
   const checkbox = document.createElement("input");
   checkbox.setAttribute("type", "checkbox");
-  checkbox.addEventListener("change", deleteTodo);
+  checkbox.addEventListener("change", checkedTodo);
+
+  const deleteBtn = document.createElement("button");
+  deleteBtn.innerText = "❌";
+  deleteBtn.addEventListener("click", deleteTodo);
+
   li.append(checkbox);
   li.append(span);
+  li.append(deleteBtn);
+
   todoList.append(li);
 }
 

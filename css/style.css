@@ -22,7 +22,6 @@ body {
 /********** top container-weather **********/
 .top_container {
   width: 100%;
-  height: 60px;
   display: flex;
   justify-content: flex-end;
   flex: 0 1 10%;
@@ -40,10 +39,11 @@ div#weather {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  flex: 0 1 50%;
+  flex: 0 1 45%;
 }
 h2#clock {
-  font-size: 130px;
+  font-size: 170px;
+  margin-bottom: -30px;
 }
 
 /********** greeting **********/
@@ -53,7 +53,7 @@ h2#clock {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  flex: 0 1 10%;
+  flex: 0 1 15%;
 }
 #login-form > input {
   border: none;
@@ -129,6 +129,12 @@ h2#clock {
 
 #todo-list > li > input {
   margin-right: 10px;
+}
+
+#todo-list > li > button {
+  background: none;
+  border: none;
+  margin: 10px;
 }
 
 /********** quote **********/
